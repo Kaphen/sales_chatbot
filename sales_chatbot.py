@@ -31,6 +31,7 @@ def sales_chat(message, history):
     if ans["source_documents"] or enable_chat:
         print(f"[result]{ans['result']}")
         print(f"[source_documents]{ans['source_documents']}")
+        return ans["result"]
     # 否则输出套路话术
     else:
         return "这个问题我要问问领导"

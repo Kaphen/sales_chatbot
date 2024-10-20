@@ -1,10 +1,7 @@
-import time
-
-import numpy as np
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
-import re
+
 
 
 def save_faiss_db(txt_path, faiss_dir):
@@ -24,7 +21,6 @@ def save_faiss_db(txt_path, faiss_dir):
 if __name__ == '__main__':
     # 家装向量数据库
     save_faiss_db("home_decoration_sales_data.txt", "home_decoration_sales")
-    save_faiss_db("real_estate_sales_data.txt", "real_estate_sales")
 
 
     db = FAISS.load_local("home_decoration_sales", OpenAIEmbeddings(), allow_dangerous_deserialization=True)
